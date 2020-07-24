@@ -1,5 +1,5 @@
 server:
-  port: 8091
+  port: 8092
 #  tomcat:
     # 这里调小tomcat最大线程池数量,来做测试
 #    max-threads: 10

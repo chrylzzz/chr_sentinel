@@ -1,11 +1,8 @@
 server:
-  port: 8091
-#  tomcat:
-    # 这里调小tomcat最大线程池数量,来做测试
-#    max-threads: 10
+  port: 8090
 spring:
   application:
-    name: sentinel_demo
+    name: sentinel-demo
 # nacos
   main:
     allow-bean-definition-overriding: true  #springBoot 2.1 需要设定,防止重复
@@ -14,12 +11,13 @@ spring:
         # 服务发现
         discovery:
           server-addr: 127.0.0.1:8848
-          namespace:
-          cluster-name: CHRSENTINEL
+          namespace: c1a97da9-f48d-4729-9b29-744b746cfb44
+#          cluster-name: CHRSENTINEL
         # 配置管理
         config:
           server-addr: 127.0.0.1:8848
-          namespace:
+#          file-extension: yaml
+          namespace: c1a97da9-f48d-4729-9b29-744b746cfb44
           group: CHRSENTINEL
 # sentinel: 注意sentinel为懒加载模式
       sentinel:
@@ -34,11 +32,6 @@ spring:
 #          enabled: false
 
 # ribbon 负载均衡修改
-service-goods:  #服务提供者的名称!!注意是服务提供者
+common-api:  #服务提供者的名称!!注意是服务提供者
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-
-# feign 整合sentinel ,开启feign对sentinel的支持(Feign 调用做限流),这样的话就可以把流控先知道feign了
-feign:
-  sentinel:
-    enabled: true

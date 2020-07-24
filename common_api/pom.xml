@@ -28,7 +28,7 @@
         </dependency>
 
 
-        <!--  -->
+        <!-- 公共依赖 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>

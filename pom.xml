@@ -11,6 +11,7 @@
     <modules>
         <module>sentinel_demo</module>
         <module>common_api</module>
+        <module>common_api_2</module>
     </modules>
 
 
