@@ -20,6 +20,8 @@ public class GoodsController {
 
     @PostMapping("/getGoods")
     public Object getGood(@RequestBody ChrGoods chrGoods) {
+        System.out.println(chrGoods);
+        chrGoods.setGoodsId(3);
         return goodsService.getGoods(chrGoods);
     }
 }

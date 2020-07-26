@@ -1,6 +1,8 @@
 package com.chryl.controller;
 
 import com.chryl.clinet.GoodsClinet;
+import com.chryl.core.ex.EnumError;
+import com.chryl.core.ex.ResponseException;
 import com.chryl.po.ChrGoods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,5 +26,13 @@ public class TestController {
         ChrGoods chrGoods = new ChrGoods();
         chrGoods.setGoodsId(2);
         return goodsClinet.getGood(chrGoods);
+    }
+
+    @GetMapping("/time")
+    public Object show2() throws ResponseException {
+        if (1 == 1) {
+            throw new ResponseException(EnumError.UNKNOW_ERROR);
+        }
+        return null;
     }
 }
